@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ayam Beujeuk Seuhah - Rasakan sensasi ayam pedas dengan bumbu rempah pilihan. Pesan sekarang melalui website atau GoFood.">
+    <meta name="keywords" content="Ayam Beujeuk, Ayam Pedas, Nasi Tutug Oncom, Kuliner Bandung, E-Commerce Makanan">
+    <meta name="author" content="Moch Lukman Saepul Rajib">
+    
+    <title>Ayam Beujeuk Seuhah | Pedasnya Nendang!</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= HEADER & NAVIGATION ================= -->
+    <header class="site-header">
+        <nav class="main-nav container">
+            <!-- Logo -->
+            <a href="index.html" class="brand-logo" aria-label="Beranda Ayam Beujeuk Seuhah">
+                <i class="fa-solid fa-pepper-hot brand-icon"></i>
+                <span class="brand-text">Ayam Beujeuk Seuhah</span>
+            </a>
+
+            <!-- Search Bar with Auto Suggestion Placeholder -->
+            <div class="search-container">
+                <form action="/search" method="GET" class="search-form">
+                    <input type="search" name="q" class="search-input" placeholder="Cari menu favoritmu (cth: Ayam Bakar)..." aria-label="Cari menu">
+                    <button type="submit" class="search-btn" aria-label="Tombol Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <div class="search-suggestions" hidden>
+                    <!-- Auto-suggestion items will be injected via JS -->
+                </div>
+            </div>
+
+            <!-- Navigation Links (Desktop) -->
+            <ul class="nav-links">
+                <li><a href="#beranda" class="nav-item active">Beranda</a></li>
+                <li class="dropdown-parent">
+                    <a href="#kategori" class="nav-item">Kategori <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#ayam">Menu Ayam</a></li>
+                        <li><a href="#nasi">Menu Nasi</a></li>
+                        <li><a href="#mie">Menu Mie</a></li>
+                    </ul>
+                </li>
+                <li><a href="#tentang" class="nav-item">Tentang</a></li>
+            </ul>
+
+            <!-- User Actions: Account & Cart -->
+            <div class="user-actions">
+                <button class="action-btn account-btn" aria-label="Akun Pengguna">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+                <button class="action-btn cart-toggle-btn" aria-label="Keranjang Belanja" aria-controls="cart-sidebar">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-badge-count">0</span>
+                </button>
+                <button class="hamburger-menu" aria-label="Buka Menu Mobile" aria-controls="mobile-nav">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+        
+        <!-- Hero Section -->
+        <section id="beranda" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <span class="badge badge-primary">Bikin Nagih!</span>
+                <h1 class="hero-title">Rasakan Pedasnya <br><span class="highlight">Ayam Beujeuk Seuhah!</span></h1>
+                <p class="hero-subtitle">Di Beujeuk Sama Aku Di Makan Sama Kamu. Pesan sekarang melalui GoFood atau langsung dari website kami!</p>
+                <div class="hero-cta">
+                    <a href="#produk" class="btn btn-primary">Lihat Menu</a>
+                    <a href="https://gofood.co.id/bandung/restaurant/ayam-beujeuk-seuhah-87acd8ce-c144-467c-93e7-dd8df6c67546" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fa-solid fa-motorcycle"></i> Pesan via GoFood
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breadcrumbs Navigation -->
+        <nav aria-label="breadcrumb" class="breadcrumb-container container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">Beranda</a></li>
+                <li><span aria-current="page">Menu Kami</span></li>
+            </ol>
+        </nav>
+
+        <!-- E-Commerce Main Layout (Sidebar + Product Listing) -->
+        <div class="ecommerce-layout container" id="produk">
+            
+            <!-- Sidebar: Filters & Categories -->
+            <aside class="sidebar-filter">
+                <div class="filter-group">
+                    <h3 class="filter-title">Kategori</h3>
+                    <ul class="filter-list">
+                        <li><label><input type="checkbox" name="category" value="ayam"> Olahan Ayam</label></li>
+                        <li><label><input type="checkbox" name="category" value="nasi"> Nasi & Paket</label></li>
+                        <li><label><input type="checkbox" name="category" value="mie"> Olahan Mie</label></li>
+                    </ul>
+                </div>
+                <div class="filter-group">
+                    <h3 class="filter-title">Level Pedas</h3>
+                    <ul class="filter-list">
+                        <li><label><input type="checkbox" name="spicy" value="sedang"> Sedang</label></li>
+                        <li><label><input type="checkbox" name="spicy" value="pedas"> Pedas</label></li>
+                        <li><label><input type="checkbox" name="spicy" value="seuhah"> Seuhah (Ekstra Pedas)</label></li>
+                    </ul>
+                </div>
+                <div class="filter-group">
+                    <h3 class="filter-title">Urutkan</h3>
+                    <select class="sort-select" aria-label="Urutkan produk">
+                        <option value="populer">Paling Populer</option>
+                        <option value="terbaru">Terbaru</option>
+                        <option value="termurah">Harga: Rendah ke Tinggi</option>
+                        <option value="termahal">Harga: Tinggi ke Rendah</option>
+                    </select>
+                </div>
+            </aside>
+
+            <!-- Product Listing Page (PLP) -->
+            <section class="product-listing">
+                <header class="section-header">
+                    <h2>Menu <span class="highlight">Andalan Kami</span></h2>
+                    <p>Pilihan menu terbaik yang selalu jadi favorit pelanggan setia.</p>
+                </header>
+
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <figure class="product-image-wrapper">
+                            <img src="ayam beujeuk seuhah.jpg.jpeg" alt="Ayam Beujeuk Seuhah" class="product-image" loading="lazy">
+                        </figure>
+                        <div class="product-info">
+                            <h3 class="product-title">Ayam Beujeuk Seuhah</h3>
+                            <p class="product-desc">Ayam dengan sambal beujeuk khas yang pedasnya maksimal.</p>
+                            <div class="product-price">Rp 25.000</div>
+                            <button class="btn btn-outline btn-add-cart" data-id="1" data-name="Ayam Beujeuk Seuhah" data-price="25000">
+                                <i class="fa-solid fa-cart-plus"></i> Tambah
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <figure class="product-image-wrapper">
+                            <img src="ayam bakar jeletot.jpg.jpeg" alt="Ayam Bakar Jeletot" class="product-image" loading="lazy">
+                        </figure>
+                        <div class="product-info">
+                            <h3 class="product-title">Ayam Bakar Jeletot</h3>
+                            <p class="product-desc">Ayam bakar bumbu meresap dengan sensasi pedas manis.</p>
+                            <div class="product-price">Rp 28.000</div>
+                            <button class="btn btn-outline btn-add-cart" data-id="2" data-name="Ayam Bakar Jeletot" data-price="28000">
+                                <i class="fa-solid fa-cart-plus"></i> Tambah
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <figure class="product-image-wrapper">
+                            <img src="nasi tutug oncom.jpg.jpeg" alt="Nasi Tutug Oncom" class="product-image" loading="lazy">
+                        </figure>
+                        <div class="product-info">
+                            <h3 class="product-title">Nasi Tutug Oncom</h3>
+                            <p class="product-desc">Nasi dengan sentuhan bumbu rempah dengan taburan oncom dan ayam.</p>
+                            <div class="product-price">Rp 20.000</div>
+                            <button class="btn btn-outline btn-add-cart" data-id="3" data-name="Nasi Tutug Oncom" data-price="20000">
+                                <i class="fa-solid fa-cart-plus"></i> Tambah
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <figure class="product-image-wrapper">
+                            <img src="spatula.jpg.jpeg" alt="Menu Spatula" class="product-image" loading="lazy">
+                        </figure>
+                        <div class="product-info">
+                            <h3 class="product-title">Spatula (Spageti Tulang)</h3>
+                            <p class="product-desc">Spageti dengan sensasi bumbu khas dan topping ayam tulang lunak.</p>
+                            <div class="product-price">Rp 26.000</div>
+                            <button class="btn btn-outline btn-add-cart" data-id="4" data-name="Spatula" data-price="26000">
+                                <i class="fa-solid fa-cart-plus"></i> Tambah
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ================= OFFCANVAS CART (SIDEBAR) ================= -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="cart-sidebar" id="cart-sidebar" aria-hidden="true">
+        <header class="cart-header">
+            <h2><i class="fa-solid fa-cart-shopping"></i> Keranjang Pesanan</h2>
+            <button class="close-cart-btn" id="close-cart-btn" aria-label="Tutup keranjang">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+        <div class="cart-items-container" id="cart-items-container">
+            <!-- Empty state fallback -->
+            <div class="cart-empty-state">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <p>Keranjang Anda masih kosong</p>
+            </div>
+            <!-- Cart items will be rendered here via JS -->
+        </div>
+        <footer class="cart-footer">
+            <div class="cart-summary">
+                <span>Total:</span>
+                <strong class="cart-total-price" id="cart-total-price">Rp 0</strong>
+            </div>
+            <button class="btn btn-success btn-checkout" id="checkout-btn">
+                <i class="fa-brands fa-whatsapp"></i> Checkout via WhatsApp
+            </button>
+        </footer>
+    </aside>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer" id="kontak">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3><span class="highlight">Ayam Beujeuk</span> Seuhah</h3>
+                <p>Nikmati sensasi makan ayam dengan pedas yang meledak di mulut. Dimasak dengan bumbu rempah pilihan terbaik!</p>
+                <p class="owner-info"><strong>Owner:</strong> Moch Lukman Saepul Rajib</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <ul>
+                    <li><i class="fa-solid fa-phone"></i> 0821-2413-5338</li>
+                    <li><i class="fa-solid fa-envelope"></i> seupulrajib12@gmail.com</li>
+                    <li><i class="fa-solid fa-map-location-dot"></i> Bandung, Jawa Barat</li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Sosial Media & Order</h4>
+                <ul class="social-links">
+                    <li><a href="https://instagram.com/Ayam_Beujeuk_Seuhah" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> @Ayam_Beujeuk_Seuhah</a></li>
+                    <li><a href="https://www.tiktok.com/@ayambeujeukseuhah" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> Ayam Beujeuk Seuhah</a></li>
+                    <li><a href="https://gofood.co.id/bandung/restaurant/ayam-beujeuk-seuhah-87acd8ce-c144-467c-93e7-dd8df6c67546" target="_blank" rel="noopener"><i class="fa-solid fa-motorcycle"></i> Order via GoFood</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ayam Beujeuk Seuhah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External Script JS link setup for the future -->
+    <!-- <script src="script.js" defer></script> -->
+</body>
+</html>
